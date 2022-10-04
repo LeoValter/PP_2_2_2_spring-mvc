@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Cars</title>
+
+</head>
+<body>
+    <table border="1" style="width:300px">
+        <thead>Cars</thead>
+        <tbody>
+        <tr>
+            <th>Brand</th>
+            <th>Model</th>
+            <th>Serial</th>
+        </tr>
+        <tr th:each="car: ${cars}">
+            <td><span th:text="${car.brand}">Brand</span></td>
+            <td><span th:text="${car.model}">Model</span></td>
+            <td><span th:text="${#numbers.formatInteger(car.serial, 3)}"></span></td>
+        </tr>
+        </tbody>
+
+    </table>
+</body>
+</html>
